@@ -602,6 +602,186 @@ a:hover { color: var(--accent2); }
   transform: translateY(0);
 }
 
+/* ============================================================
+   LIGHT MODE: COMPREHENSIVE OVERRIDES
+   ============================================================ */
+
+/* ---- LIGHT MODE: PAGE HERO SECTIONS ---- */
+[data-theme="light"] .dash-hero,
+[data-theme="light"] .clubs-hero,
+[data-theme="light"] .events-hero,
+[data-theme="light"] .detail-hero,
+[data-theme="light"] .login-hero,
+[data-theme="light"] .profile-hero,
+[data-theme="light"] .admin-hero {
+  background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 50%, #BFDBFE 100%) !important;
+  color: var(--text) !important;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.04) !important;
+}
+
+[data-theme="light"] .dash-hero::before,
+[data-theme="light"] .clubs-hero::before,
+[data-theme="light"] .events-hero::before,
+[data-theme="light"] .detail-hero::before,
+[data-theme="light"] .admin-hero::before {
+  background: none !important;
+}
+
+[data-theme="light"] .dash-hero .page-title,
+[data-theme="light"] .clubs-hero .page-title,
+[data-theme="light"] .events-hero .page-title,
+[data-theme="light"] .detail-hero .page-title,
+[data-theme="light"] .admin-hero .page-title,
+[data-theme="light"] .dash-hero h1,
+[data-theme="light"] .clubs-hero h1,
+[data-theme="light"] .events-hero h1,
+[data-theme="light"] .detail-hero h1,
+[data-theme="light"] .admin-hero h1 {
+  color: #0F172A !important;
+}
+
+[data-theme="light"] .dash-hero .hero-sub,
+[data-theme="light"] .clubs-hero .hero-sub,
+[data-theme="light"] .events-hero .hero-sub,
+[data-theme="light"] .detail-hero .hero-sub,
+[data-theme="light"] .admin-hero .hero-sub,
+[data-theme="light"] .dash-hero p,
+[data-theme="light"] .clubs-hero p,
+[data-theme="light"] .events-hero p,
+[data-theme="light"] .detail-hero p,
+[data-theme="light"] .admin-hero p {
+  color: #475569 !important;
+}
+
+[data-theme="light"] .dash-hero .hero-meta span,
+[data-theme="light"] .detail-hero .hero-meta span,
+[data-theme="light"] .events-hero .hero-meta span {
+  color: #475569 !important;
+}
+
+/* ---- LIGHT MODE: Login hero ---- */
+[data-theme="light"] .login-hero h1,
+[data-theme="light"] .login-hero .hero-title {
+  color: #0F172A !important;
+}
+
+[data-theme="light"] .login-hero p,
+[data-theme="light"] .login-hero .hero-sub {
+  color: #475569 !important;
+}
+
+/* ---- LIGHT MODE: Profile hero ---- */
+[data-theme="light"] .profile-hero .profile-name,
+[data-theme="light"] .profile-hero h1 {
+  color: #0F172A !important;
+}
+
+[data-theme="light"] .profile-hero p,
+[data-theme="light"] .profile-hero .text-muted {
+  color: #475569 !important;
+}
+
+[data-theme="light"] .profile-hero .profile-avatar {
+  background: rgba(59,130,246,0.15) !important;
+  color: var(--accent) !important;
+}
+
+/* ---- LIGHT MODE: Keep badge text white ---- */
+[data-theme="light"] .hero-badge,
+[data-theme="light"] .badge-accent,
+[data-theme="light"] .btn-accent {
+  color: #fff !important;
+}
+
+/* ---- LIGHT MODE: Modals ---- */
+[data-theme="light"] .modal-content {
+  background: var(--surface) !important;
+  color: var(--text) !important;
+}
+
+[data-theme="light"] .modal-header,
+[data-theme="light"] .modal-footer {
+  border-color: var(--border) !important;
+}
+
+/* ---- LIGHT MODE: Dropdowns ---- */
+[data-theme="light"] .dropdown-menu {
+  background: var(--surface) !important;
+  border: 1px solid var(--border) !important;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.08) !important;
+}
+
+[data-theme="light"] .dropdown-item {
+  color: var(--text) !important;
+}
+
+[data-theme="light"] .dropdown-item:hover {
+  background: var(--surface2) !important;
+}
+
+/* ---- LIGHT MODE: Text utility overrides ---- */
+[data-theme="light"] .text-dark {
+  color: var(--text) !important;
+}
+
+/* ---- LIGHT MODE: Avatar ---- */
+[data-theme="light"] .avatar-sm {
+  background: var(--surface2) !important;
+  color: var(--accent) !important;
+}
+
+/* ---- LIGHT MODE: Stat cards ---- */
+[data-theme="light"] .stat-value,
+[data-theme="light"] .stat-number {
+  color: var(--text) !important;
+}
+
+/* ---- LIGHT MODE: Search box ---- */
+[data-theme="light"] .search-box {
+  background: var(--surface) !important;
+  border-color: var(--border) !important;
+}
+
+[data-theme="light"] .search-box input {
+  color: var(--text) !important;
+}
+
+/* ---- LIGHT MODE: Date boxes ---- */
+[data-theme="light"] .date-big,
+[data-theme="light"] .small-date {
+  background: rgba(59,130,246,0.08) !important;
+  border-color: rgba(59,130,246,0.15) !important;
+}
+
+/* ---- LIGHT MODE: Footer ---- */
+[data-theme="light"] .global-footer {
+  background: var(--surface) !important;
+  color: var(--text-muted) !important;
+  border-top: 1px solid var(--border) !important;
+}
+
+[data-theme="light"] .global-footer p {
+  color: var(--text-muted) !important;
+}
+
+[data-theme="light"] .footer-brand {
+  color: var(--accent) !important;
+}
+
+/* ---- LIGHT MODE: Club cover cards ---- */
+[data-theme="light"] .club-cover .category-label {
+  color: #fff !important;
+}
+
+/* ---- LIGHT MODE: Table text ---- */
+[data-theme="light"] .table {
+  color: var(--text) !important;
+}
+
+[data-theme="light"] .fw-semibold.text-dark {
+  color: var(--text) !important;
+}
+
 /* ---- RESPONSIVE ---- */
 @media (max-width: 991.98px) {
   .navbar-collapse {

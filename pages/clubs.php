@@ -151,7 +151,7 @@ include '../includes/header.php';
                                         <span class="status-pill sp-open">En attente</span>
                                         <a href="club_details.php?id=<?= $club['id'] ?>" class="btn btn-secondary-ghost btn-sm">Voir détails</a>
                                     <?php else: ?>
-                                        <?php if ($club['adhesion_auto']): ?>
+                                        <?php if ($club['adhesion_auto'] ?? 0): ?>
                                             <span class="status-pill sp-open">Ouvert</span>
                                         <?php else: ?>
                                             <span class="status-pill sp-open">Sur demande</span>
@@ -159,7 +159,7 @@ include '../includes/header.php';
                                         <?php if ($logged_in): ?>
                                             <form action="../actions/membership_request.php" method="POST" class="d-inline">
                                                 <input type="hidden" name="club_id" value="<?= $club['id'] ?>">
-                                                <button type="submit" class="btn btn-accent btn-sm"><?= $club['adhesion_auto'] ? 'Rejoindre' : 'Demander' ?></button>
+                                                <button type="submit" class="btn btn-accent btn-sm"><?= ($club['adhesion_auto'] ?? 0) ? 'Rejoindre' : 'Demander' ?></button>
                                             </form>
                                         <?php else: ?>
                                             <a href="login.php" class="btn btn-accent btn-sm">Rejoindre</a>

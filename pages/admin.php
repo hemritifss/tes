@@ -160,7 +160,7 @@ include '../includes/header.php';
                                                 </button>
                                                 <ul class="dropdown-menu dropdown-menu-end border-0 shadow-sm">
                                                     <li><a class="dropdown-item" href="club_details.php?id=<?= $club['id'] ?>">Voir la page publique</a></li>
-                                                    <li><button class="dropdown-item" onclick="editClub(<?= $club['id'] ?>, '<?= htmlspecialchars(addslashes($club['nom'])) ?>', '<?= htmlspecialchars(addslashes($club['description'])) ?>', '<?= htmlspecialchars($club['categorie']) ?>', '<?= htmlspecialchars($club['emoji']) ?>', <?= $club['adhesion_auto'] ?>)">Modifier</button></li>
+                                                    <li><button class="dropdown-item" onclick="editClub(<?= $club['id'] ?>, '<?= htmlspecialchars(addslashes($club['nom'])) ?>', '<?= htmlspecialchars(addslashes($club['description'])) ?>', '<?= htmlspecialchars($club['categorie']) ?>', '<?= htmlspecialchars($club['emoji']) ?>', <?= $club['adhesion_auto'] ?? 0 ?>)">Modifier</button></li>
                                                     <li><hr class="dropdown-divider"></li>
                                                     <li>
                                                         <form action="../actions/club_delete.php" method="POST" onsubmit="return confirm('Attention ! Cela supprimera le club, tous ses membres et tous ses événements. Poursuivre ?')">
