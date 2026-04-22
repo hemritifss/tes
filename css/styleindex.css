@@ -4,11 +4,11 @@
 
 /* ---- HERO SECTION ---- */
 .hero {
-  min-height: 100vh;
+  min-height: 80vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 8rem 0 4rem;
+  padding: 5rem 0 3rem;
   position: relative;
   overflow: hidden;
 }
