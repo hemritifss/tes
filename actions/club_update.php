@@ -72,9 +72,13 @@ $stmt->bindParam(':couleur', $couleur);
 $stmt->bindParam(':adhesion_auto', $adhesion_auto, PDO::PARAM_INT);
 $stmt->bindParam(':id', $club_id);
 $stmt->bindParam(':admin_id', $admin_id);
-$stmt->execute();
-
-$_SESSION['message'] = "Club mis à jour avec succès.";
-$_SESSION['message_type'] = "succes";
+try {
+    $stmt->execute();
+    $_SESSION['message'] = "Club mis à jour avec succès.";
+    $_SESSION['message_type'] = "succes";
+} catch (PDOException $e) {
+    $_SESSION['message'] = "Erreur lors de la mise à jour du club.";
+    $_SESSION['message_type'] = "erreur";
+}
 header("Location: ../pages/admin.php");
 exit();

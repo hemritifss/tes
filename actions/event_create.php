@@ -61,9 +61,13 @@ $stmt->bindParam(':lieu', $lieu);
 $stmt->bindParam(':date_debut', $date_debut);
 $stmt->bindParam(':date_fin', $date_fin);
 $stmt->bindParam(':max', $max_participants);
-$stmt->execute();
-
-$_SESSION['message'] = "Événement créé avec succès !";
-$_SESSION['message_type'] = "succes";
+try {
+    $stmt->execute();
+    $_SESSION['message'] = "Événement créé avec succès !";
+    $_SESSION['message_type'] = "succes";
+} catch (PDOException $e) {
+    $_SESSION['message'] = "Erreur lors de la création de l'événement.";
+    $_SESSION['message_type'] = "erreur";
+}
 header("Location: ../pages/admin.php");
 exit();

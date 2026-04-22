@@ -56,9 +56,13 @@ $stmt->bindParam(':emoji', $emoji);
 $stmt->bindParam(':couleur', $couleur);
 $stmt->bindParam(':adhesion_auto', $adhesion_auto, PDO::PARAM_INT);
 $stmt->bindParam(':admin_id', $admin_id);
-$stmt->execute();
-
-$_SESSION['message'] = "Club créé avec succès !";
-$_SESSION['message_type'] = "succes";
+try {
+    $stmt->execute();
+    $_SESSION['message'] = "Club créé avec succès !";
+    $_SESSION['message_type'] = "succes";
+} catch (PDOException $e) {
+    $_SESSION['message'] = "Erreur lors de la création du club. Veuillez vérifier vos données.";
+    $_SESSION['message_type'] = "erreur";
+}
 header("Location: ../pages/admin.php");
 exit();

@@ -61,9 +61,13 @@ $stmt->bindParam(':date_debut', $date_debut);
 $stmt->bindParam(':date_fin', $date_fin);
 $stmt->bindParam(':max', $max_participants);
 $stmt->bindParam(':id', $event_id);
-$stmt->execute();
-
-$_SESSION['message'] = "Événement mis à jour avec succès.";
-$_SESSION['message_type'] = "succes";
+try {
+    $stmt->execute();
+    $_SESSION['message'] = "Événement mis à jour avec succès.";
+    $_SESSION['message_type'] = "succes";
+} catch (PDOException $e) {
+    $_SESSION['message'] = "Erreur lors de la mise à jour de l'événement.";
+    $_SESSION['message_type'] = "erreur";
+}
 header("Location: ../pages/admin.php");
 exit();

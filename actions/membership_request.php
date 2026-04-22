@@ -89,13 +89,18 @@ $stmt = $cnx->prepare($sql);
 $stmt->bindParam(':user_id', $user_id);
 $stmt->bindParam(':club_id', $club_id);
 $stmt->bindParam(':statut', $statut);
-$stmt->execute();
-
-if ($statut == 'accepte') {
-    $_SESSION['message'] = "Adhésion confirmée ! Bienvenue dans le club.";
-} else {
-    $_SESSION['message'] = "Demande d'adhésion envoyée avec succès !";
+try {
+    $stmt->execute();
+    if ($statut == 'accepte') {
+        $_SESSION['message'] = "Adhésion confirmée ! Bienvenue dans le club.";
+    } else {
+        $_SESSION['message'] = "Demande d'adhésion envoyée avec succès !";
+    }
+    $_SESSION['message_type'] = "succes";
+} catch (PDOException $e) {
+    $_SESSION['message'] = "Erreur lors de la demande d'adhésion. Veuillez vous reconnecter.";
+    $_SESSION['message_type'] = "erreur";
 }
-$_SESSION['message_type'] = "succes";
+
 header("Location: ../pages/club_details.php?id=" . $club_id);
 exit();

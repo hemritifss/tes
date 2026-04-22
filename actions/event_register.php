@@ -71,9 +71,15 @@ $sql = "INSERT INTO inscriptions_evenements (user_id, evenement_id) VALUES (:uid
 $stmt = $cnx->prepare($sql);
 $stmt->bindParam(':uid', $user_id);
 $stmt->bindParam(':eid', $event_id);
-$stmt->execute();
 
-$_SESSION['message'] = "Inscription réussie !";
-$_SESSION['message_type'] = "succes";
+try {
+    $stmt->execute();
+    $_SESSION['message'] = "Inscription réussie !";
+    $_SESSION['message_type'] = "succes";
+} catch (PDOException $e) {
+    $_SESSION['message'] = "Erreur lors de l'inscription. Veuillez vous reconnecter.";
+    $_SESSION['message_type'] = "erreur";
+}
+
 header("Location: ../pages/event_details.php?id=" . $event_id);
 exit();
