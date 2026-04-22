@@ -1,0 +1,181 @@
+/* ============================================
+   UniClubs — Dashboard Page Styles
+   Dark theme — extends global.css
+   ============================================ */
+
+/* ---- HERO ---- */
+.dash-hero {
+  background: linear-gradient(135deg, #070a14 0%, #0d1727 50%, #112040 100%);
+  border-radius: var(--radius-lg);
+  color: #fff;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.dash-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 50% 50% at 80% 20%, rgba(59,130,246,0.08) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+/* ---- SEARCH ---- */
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.85rem 1rem;
+}
+
+.search-box i { color: var(--text-muted); }
+
+.search-box input {
+  border: none;
+  outline: none;
+  width: 100%;
+  background: transparent;
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+}
+
+.search-box input::placeholder { color: var(--text-muted); }
+
+/* ---- STAT CARDS ---- */
+.stat-card {
+  background: var(--surface) !important;
+  border: 1px solid var(--border) !important;
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  border-color: var(--accent) !important;
+  box-shadow: 0 8px 30px rgba(59,130,246,0.1);
+  transform: translateY(-2px);
+}
+
+.stat-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  margin-bottom: 1rem;
+}
+
+.icon-1 { background: rgba(59,130,246,0.12); color: var(--accent); }
+.icon-2 { background: rgba(6,182,212,0.12); color: var(--accent2); }
+.icon-3 { background: rgba(245,158,11,0.12); color: var(--gold); }
+.icon-4 { background: rgba(16,185,129,0.12); color: var(--green); }
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--text);
+}
+
+.stat-label {
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  margin-top: 0.35rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ---- DASHBOARD CARDS ---- */
+.dash-card {
+  background: var(--surface) !important;
+  border: 1px solid var(--border) !important;
+}
+
+/* ---- LIST ITEMS ---- */
+.list-item,
+.event-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.item-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  flex-shrink: 0;
+}
+
+.item-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.item-sub {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 0.2rem;
+}
+
+/* ---- BADGE PILLS ---- */
+.badge-pill {
+  font-size: 0.72rem;
+  padding: 0.28rem 0.7rem;
+  border-radius: 999px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.badge-member { background: rgba(59,130,246,0.15); color: #60A5FA; }
+.badge-admin { background: rgba(139,92,246,0.15); color: #A78BFA; }
+.badge-open { background: rgba(16,185,129,0.15); color: #34D399; }
+.badge-joined { background: rgba(16,185,129,0.15); color: #34D399; }
+.badge-upcoming { background: rgba(245,158,11,0.15); color: #FBBF24; }
+
+/* ---- DATE BOX ---- */
+.date-box {
+  min-width: 54px;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-align: center;
+  padding: 0.45rem;
+}
+
+.date-day {
+  font-size: 1.2rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--accent);
+}
+
+.date-month {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: 0.18rem;
+}
+
+/* ---- REQUESTS TABLE ---- */
+.requests-table th {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid var(--border);
+}
+
+.requests-table td {
+  border-color: var(--border);
+}

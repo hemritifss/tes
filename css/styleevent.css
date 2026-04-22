@@ -1,0 +1,133 @@
+/* ============================================
+   UniClubs — Events List Page Styles
+   Dark theme — extends global.css
+   ============================================ */
+
+/* ---- HERO EVENT ---- */
+.hero-event {
+  background: linear-gradient(135deg, #070a14 0%, #0d1727 50%, #112040 100%);
+  border-radius: var(--radius-lg);
+  color: #fff;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-event::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 40% 50% at 20% 80%, rgba(6,182,212,0.08) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.hero-date {
+  width: 80px;
+  height: 80px;
+  background: rgba(59,130,246,0.12);
+  border: 1px solid rgba(59,130,246,0.2);
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-day {
+  font-family: 'Syne', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--accent);
+}
+
+.hero-month {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-top: 0.2rem;
+  font-weight: 700;
+}
+
+.hero-title {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.meta-line {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  color: var(--text-muted);
+  font-size: 0.88rem;
+}
+
+.meta-line i { color: var(--accent); margin-right: 0.3rem; }
+
+.hero-text {
+  color: rgba(255,255,255,0.72);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.badge-accent {
+  background: linear-gradient(135deg, var(--accent), var(--accent3)) !important;
+  color: #fff !important;
+}
+
+/* ---- SEARCH CARD ---- */
+.search-card {
+  background: var(--surface) !important;
+}
+
+/* ---- EVENT CARDS ---- */
+.event-card {
+  background: var(--surface) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 40px rgba(59,130,246,0.1) !important;
+  border-color: var(--accent) !important;
+}
+
+.small-date {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.5rem 0.7rem;
+  min-width: 54px;
+}
+
+.small-day {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--accent);
+}
+
+.small-month {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: 0.15rem;
+  font-weight: 700;
+}
+
+.event-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.club-text {
+  color: var(--accent);
+  font-size: 0.82rem;
+  font-weight: 600;
+}

@@ -1,0 +1,242 @@
+/* ============================================
+   UniClubs — Admin Panel Styles
+   Dark theme — extends global.css
+   ============================================ */
+
+.admin-hero {
+  background: linear-gradient(135deg, #070a14 0%, #0d1727 50%, #112040 100%);
+  border-radius: var(--radius-lg);
+  color: #fff;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.club-logo {
+  width: 78px;
+  height: 78px;
+  border-radius: var(--radius);
+  background: rgba(59,130,246,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
+
+/* ---- STAT CARDS ---- */
+.stat-card,
+.admin-card {
+  background: var(--surface) !important;
+  border: 1px solid var(--border) !important;
+}
+
+.stat-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  margin-bottom: 1rem;
+}
+
+.bg-soft-blue { background: rgba(59,130,246,0.12); color: var(--accent); }
+.bg-soft-orange { background: rgba(245,158,11,0.12); color: var(--gold); }
+.bg-soft-cyan { background: rgba(6,182,212,0.12); color: var(--accent2); }
+.bg-soft-green { background: rgba(16,185,129,0.12); color: var(--green); }
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--text);
+}
+
+.stat-label {
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  margin-top: 0.35rem;
+}
+
+/* ---- ADMIN CLUB CARD ---- */
+.admin-club-card {
+  background: var(--surface) !important;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.admin-club-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent) !important;
+}
+
+.admin-club-card .card-header {
+  border-bottom: none;
+}
+
+/* ---- MEMBERS TABLE ---- */
+.members-table th {
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--border);
+}
+
+.members-table td { border-color: var(--border); }
+
+.member-box {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.member-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.78rem;
+  flex-shrink: 0;
+  background: linear-gradient(135deg, var(--accent), var(--accent3));
+}
+
+.member-name {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.member-email {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.status-pill { font-size: 0.72rem; padding: 0.28rem 0.7rem; border-radius: 999px; font-weight: 700; }
+.active-pill { background: rgba(16,185,129,0.15); color: #34D399; }
+.wait-pill { background: rgba(245,158,11,0.15); color: #FBBF24; }
+
+/* ---- EVENT ADMIN CARDS ---- */
+.event-admin-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.event-admin-card:hover { border-color: var(--accent); }
+
+.event-date-pill {
+  min-width: 56px;
+  background: rgba(59,130,246,0.1);
+  border: 1px solid rgba(59,130,246,0.2);
+  border-radius: 10px;
+  text-align: center;
+  padding: 0.45rem;
+}
+
+.event-date-pill .d {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--accent);
+}
+
+.event-date-pill .m {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.event-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.event-meta {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.mini-badge {
+  background: rgba(245,158,11,0.15);
+  color: #FBBF24;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+}
+
+/* ---- REQUEST CARDS ---- */
+.request-card {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.request-head {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.request-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--accent), var(--accent3));
+}
+
+.request-name { font-weight: 700; font-size: 0.9rem; color: var(--text); }
+.request-sub { font-size: 0.76rem; color: var(--text-muted); }
+
+/* ---- STATS MONTH ---- */
+.stats-month {
+  background: var(--surface) !important;
+  border: 1px solid var(--border) !important;
+}
+
+.mini-stat {
+  text-align: center;
+  padding: 1rem;
+  background: var(--surface2);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+
+.mini-num {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.mini-num.accent { color: var(--accent); }
+.mini-num.green { color: var(--green); }
+.mini-num.gold { color: var(--gold); }
+.mini-num.purple { color: var(--accent3); }
+
+.mini-label {
+  font-size: 0.76rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+}
+
+@media (max-width: 768px) {
+  .event-admin-card { flex-direction: column; align-items: flex-start; }
+}
