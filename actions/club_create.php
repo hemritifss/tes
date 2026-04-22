@@ -25,6 +25,7 @@ $nom = trim($_POST['nom']);
 $description = trim($_POST['description']);
 $categorie = trim($_POST['categorie']);
 $emoji = trim($_POST['emoji']);
+$adhesion_auto = isset($_POST['adhesion_auto']) ? 1 : 0;
 
 // Vérifier que les champs obligatoires ne sont pas vides
 if (empty($nom) || empty($description)) {
@@ -46,13 +47,14 @@ if ($categorie == 'scientifique') {
 }
 
 // Insérer le club dans la base de données (requête préparée avec marqueurs nommés)
-$sql = "INSERT INTO clubs (nom, description, categorie, emoji, couleur_gradient, admin_id) VALUES (:nom, :description, :categorie, :emoji, :couleur, :admin_id)";
+$sql = "INSERT INTO clubs (nom, description, categorie, emoji, couleur_gradient, adhesion_auto, admin_id) VALUES (:nom, :description, :categorie, :emoji, :couleur, :adhesion_auto, :admin_id)";
 $stmt = $cnx->prepare($sql);
 $stmt->bindParam(':nom', $nom);
 $stmt->bindParam(':description', $description);
 $stmt->bindParam(':categorie', $categorie);
 $stmt->bindParam(':emoji', $emoji);
 $stmt->bindParam(':couleur', $couleur);
+$stmt->bindParam(':adhesion_auto', $adhesion_auto, PDO::PARAM_INT);
 $stmt->bindParam(':admin_id', $admin_id);
 $stmt->execute();
 

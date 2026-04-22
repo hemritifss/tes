@@ -160,7 +160,7 @@ include '../includes/header.php';
                                                 </button>
                                                 <ul class="dropdown-menu dropdown-menu-end border-0 shadow-sm">
                                                     <li><a class="dropdown-item" href="club_details.php?id=<?= $club['id'] ?>">Voir la page publique</a></li>
-                                                    <li><button class="dropdown-item" onclick="editClub(<?= $club['id'] ?>, '<?= htmlspecialchars(addslashes($club['nom'])) ?>', '<?= htmlspecialchars(addslashes($club['description'])) ?>', '<?= htmlspecialchars($club['categorie']) ?>', '<?= htmlspecialchars($club['emoji']) ?>')">Modifier</button></li>
+                                                    <li><button class="dropdown-item" onclick="editClub(<?= $club['id'] ?>, '<?= htmlspecialchars(addslashes($club['nom'])) ?>', '<?= htmlspecialchars(addslashes($club['description'])) ?>', '<?= htmlspecialchars($club['categorie']) ?>', '<?= htmlspecialchars($club['emoji']) ?>', <?= $club['adhesion_auto'] ?>)">Modifier</button></li>
                                                     <li><hr class="dropdown-divider"></li>
                                                     <li>
                                                         <form action="../actions/club_delete.php" method="POST" onsubmit="return confirm('Attention ! Cela supprimera le club, tous ses membres et tous ses événements. Poursuivre ?')">
@@ -368,6 +368,14 @@ include '../includes/header.php';
                                     <label class="form-label fw-medium">Description</label>
                                     <textarea name="description" class="form-control" rows="4" required></textarea>
                                 </div>
+                                <div class="col-12">
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" name="adhesion_auto" id="create_adhesion_auto" value="1">
+                                        <label class="form-check-label fw-medium" for="create_adhesion_auto">
+                                            Adhésion ouverte <small class="text-muted">(Les étudiants rejoignent directement sans validation)</small>
+                                        </label>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="modal-footer border-top px-4 py-3 rounded-bottom-4">
@@ -411,6 +419,14 @@ include '../includes/header.php';
                                 <div class="col-12">
                                     <label class="form-label fw-medium">Description</label>
                                     <textarea name="description" id="edit_club_description" class="form-control" rows="4" required></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" name="adhesion_auto" id="edit_club_adhesion" value="1">
+                                        <label class="form-check-label fw-medium" for="edit_club_adhesion">
+                                            Adhésion ouverte <small class="text-muted">(Les étudiants rejoignent directement sans validation)</small>
+                                        </label>
+                                    </div>
                                 </div>
                             </div>
                         </div>

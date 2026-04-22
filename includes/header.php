@@ -185,7 +185,7 @@ $base_url = $is_subfolder ? '../' : './';
         </div>
     </nav>
 
-    <main class="py-5">
+    <main class="py-5" <?php if (!isset($active_page) || $active_page !== 'index'): ?>style="margin-top: 40px;" <?php endif; ?>>
         <div class="container">
             <?php
             // Afficher un message de succès ou d'erreur (stocké dans la session)

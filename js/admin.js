@@ -3,12 +3,13 @@
 // ============================================
 
 // Remplir la modale de modification de club
-window.editClub = function(id, nom, desc, cat, emoji) {
+window.editClub = function(id, nom, desc, cat, emoji, adhesionAuto) {
     document.getElementById('edit_club_id').value = id;
     document.getElementById('edit_club_nom').value = nom;
     document.getElementById('edit_club_description').value = desc;
     document.getElementById('edit_club_categorie').value = cat;
     document.getElementById('edit_club_emoji').value = emoji;
+    document.getElementById('edit_club_adhesion').checked = (adhesionAuto == 1);
     
     var modal = new bootstrap.Modal(document.getElementById('editClubModal'));
     modal.show();

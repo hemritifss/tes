@@ -26,6 +26,7 @@ $nom = trim($_POST['nom']);
 $description = trim($_POST['description']);
 $categorie = trim($_POST['categorie']);
 $emoji = trim($_POST['emoji']);
+$adhesion_auto = isset($_POST['adhesion_auto']) ? 1 : 0;
 
 // Vérifier que les champs obligatoires ne sont pas vides
 if ($club_id <= 0 || empty($nom) || empty($description)) {
@@ -61,13 +62,14 @@ if ($categorie == 'scientifique') {
 }
 
 // Mettre à jour le club dans la base de données
-$sql = "UPDATE clubs SET nom = :nom, description = :description, categorie = :categorie, emoji = :emoji, couleur_gradient = :couleur WHERE id = :id AND admin_id = :admin_id";
+$sql = "UPDATE clubs SET nom = :nom, description = :description, categorie = :categorie, emoji = :emoji, couleur_gradient = :couleur, adhesion_auto = :adhesion_auto WHERE id = :id AND admin_id = :admin_id";
 $stmt = $cnx->prepare($sql);
 $stmt->bindParam(':nom', $nom);
 $stmt->bindParam(':description', $description);
 $stmt->bindParam(':categorie', $categorie);
 $stmt->bindParam(':emoji', $emoji);
 $stmt->bindParam(':couleur', $couleur);
+$stmt->bindParam(':adhesion_auto', $adhesion_auto, PDO::PARAM_INT);
 $stmt->bindParam(':id', $club_id);
 $stmt->bindParam(':admin_id', $admin_id);
 $stmt->execute();

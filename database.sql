@@ -40,6 +40,7 @@ CREATE TABLE `clubs` (
     `categorie` VARCHAR(100) NOT NULL DEFAULT 'autre',
     `emoji` VARCHAR(10) DEFAULT '📌',
     `couleur_gradient` VARCHAR(255) DEFAULT 'linear-gradient(135deg, #e8f0fc, #c5d8ff)',
+    `adhesion_auto` TINYINT(1) NOT NULL DEFAULT 0,
     `admin_id` INT NOT NULL,
     `created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (`admin_id`) REFERENCES `users`(`id`) ON DELETE CASCADE
